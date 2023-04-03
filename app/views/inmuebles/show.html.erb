@@ -1,0 +1,22 @@
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+      <h2 class="display-7 fw-bold"><%= @inmueble.price %> €</h2>
+      <hr>
+      <h3 class="display-7 fw-bold"><i class="bi bi-geo-alt"></i> <%= @inmueble.address %> </h2>
+      <p class="col-md-8 fs-4">  <%= @inmueble.description %></p>
+    </div>
+    <hr>
+    <h2 class="display-7 fw-bold">Características</h2>
+      <i class="bi bi-house-add" style="font-size: 2em;"><%= @inmueble.rooms %></i>
+      <br>
+      <i class="bi bi-droplet" style="font-size: 2em;"><%= @inmueble.bathrooms %></i>
+      <br>
+      <i class="bi bi-0-square" style="font-size: 2em;"><%= @inmueble.area %></i>
+      <br>
+      <br>
+      <br>
+      <button class="btn btn-primary btn-dark" type="button">Contactar</button>
+  </div>
+
+<%= link_to 'Edit', edit_inmueble_path(@inmueble), class:"btn btn-secondary" %> 
+<%= link_to 'Back', inmuebles_path, class:"btn btn-dark" %>

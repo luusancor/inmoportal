@@ -1,0 +1,33 @@
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Rooms</th>
+      <th>Bathrooms</th>
+      <th>Area</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+    <% @inmuebles.each do |inmueble| %>
+      <tr>
+        <td><%= inmueble.address %></td>
+        <td><%= inmueble.price %></td>
+        <td><%= inmueble.rooms %></td>
+        <td><%= inmueble.bathrooms %></td>
+        <td><%= inmueble.area %></td>
+        <td><%= inmueble.description %></td>
+        <td><%= link_to 'Show', inmueble %></td>
+        <td><%= link_to 'Edit', edit_inmueble_path(inmueble) %></td>
+        <td><%= link_to 'Destroy', inmueble, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inmueble', new_inmueble_path, class:"btn btn-secondary"  %>

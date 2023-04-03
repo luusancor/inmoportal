@@ -1,0 +1,49 @@
+<%= form_with(model: inmueble) do |form| %>
+  <% if inmueble.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inmueble.errors.count, "error") %> prohibited this inmueble from being saved:</h2>
+
+      <ul>
+        <% inmueble.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+  <div class="field form-group">
+    <%= form.text_field :address, class:"form-control", placeholder: "Address" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.text_field :price, class:"form-control", placeholder: "Price" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.number_field :rooms, class:"form-control", placeholder: "Rooms" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.number_field :bathrooms, class:"form-control", placeholder: "Bahtrooms" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.text_field :area, class:"form-control", placeholder: "Area" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.text_field :description, class:"form-control", placeholder: "Description" %>
+  </div>
+<br>
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :inmueble_user_id, value: current_user.id, type: "hidden" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit class: "btn btn-dark", value: "Crear Anuncio" %>
+  </div>
+
+<% end %>
